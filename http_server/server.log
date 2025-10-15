@@ -1,0 +1,36 @@
+2025-10-14 21:55:19,186 - INFO - [MainThread] - Directorio 'webroot' creado.
+2025-10-14 21:55:19,210 - INFO - [MainThread] - Servidor iniciado en http://localhost:8080
+2025-10-14 21:55:19,210 - INFO - [MainThread] - DocumentRoot configurado en: 'webroot'
+2025-10-14 21:55:31,758 - INFO - [MainThread] - Sirviendo archivo: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\webroot\index.html
+2025-10-14 21:55:46,068 - INFO - [MainThread] - Sirviendo archivo: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\webroot\index.html
+2025-10-14 21:56:12,784 - INFO - [MainThread] - Usuario 'admin' autenticado correctamente para acceder a /private/secret.html
+2025-10-14 21:56:12,785 - INFO - [MainThread] - Sirviendo archivo: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\webroot\private\secret.html
+2025-10-14 21:57:04,621 - INFO - [MainThread] - Archivo no encontrado: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\webroot\config.ini
+2025-10-14 21:57:52,178 - INFO - [MainThread] - Archivo no encontrado: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\webroot\config.ini
+2025-10-14 22:00:06,169 - INFO - [MainThread] - Servidor detenido.
+2025-10-14 22:00:06,554 - INFO - [MainThread] - Servidor iniciado en http://localhost:8080
+2025-10-14 22:00:06,555 - INFO - [MainThread] - DocumentRoot configurado en: 'webroot'
+2025-10-14 22:00:21,179 - WARNING - [MainThread] - Intento de acceso fuera del DocumentRoot bloqueado: /config.ini
+2025-10-14 22:00:37,577 - INFO - [MainThread] - Servidor detenido.
+2025-10-14 22:00:37,816 - INFO - [MainThread] - Servidor iniciado en http://localhost:8080
+2025-10-14 22:00:37,817 - INFO - [MainThread] - DocumentRoot configurado en: 'webroot'
+2025-10-14 22:00:47,155 - WARNING - [MainThread] - Intento de acceso fuera del DocumentRoot bloqueado: /config.ini
+2025-10-14 22:00:57,371 - INFO - [MainThread] - Servidor detenido.
+2025-10-14 22:00:57,637 - INFO - [MainThread] - Servidor iniciado en http://localhost:8080
+2025-10-14 22:00:57,638 - INFO - [MainThread] - DocumentRoot configurado en: 'webroot'
+2025-10-14 22:00:59,911 - INFO - [MainThread] - Archivo no encontrado: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\webroot\config.ini
+2025-10-14 22:01:13,299 - INFO - [MainThread] - Archivo no encontrado: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\webroot\config.ini
+2025-10-14 22:01:47,049 - INFO - [MainThread] - Servidor detenido.
+2025-10-14 22:01:47,447 - INFO - [MainThread] - Servidor iniciado en http://localhost:8080
+2025-10-14 22:01:47,448 - INFO - [MainThread] - DocumentRoot configurado en: 'webroot'
+2025-10-14 22:01:59,196 - INFO - [MainThread] - Archivo no encontrado: webroot\config.ini
+2025-10-14 22:02:45,610 - INFO - [MainThread] - Servidor detenido.
+2025-10-14 22:02:45,907 - INFO - [MainThread] - Servidor iniciado en http://localhost:8080
+2025-10-14 22:02:45,907 - INFO - [MainThread] - DocumentRoot configurado en: 'webroot'
+2025-10-14 22:02:48,729 - INFO - [MainThread] - Archivo no encontrado: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\webroot\config.ini
+2025-10-14 22:03:33,807 - INFO - [MainThread] - Servidor detenido.
+2025-10-14 22:03:34,159 - INFO - [MainThread] - Servidor iniciado en http://localhost:8080
+2025-10-14 22:03:34,159 - INFO - [MainThread] - DocumentRoot configurado en: 'webroot'
+2025-10-14 22:03:35,960 - INFO - [MainThread] - Archivo no encontrado: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\webroot\config.ini
+2025-10-14 22:05:14,689 - INFO - [MainThread] - Sirviendo archivo: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\config.ini
+2025-10-14 22:07:05,637 - INFO - [MainThread] - Servidor detenido.
