@@ -1,0 +1,10 @@
+#General
+.*
+.log
+
+# http_server
+./http_server/webroot/
+
+# ftp_server
+./ftp_server/ftp_server_files/
+

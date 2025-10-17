@@ -5,7 +5,6 @@ import mimetypes
 import os
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-# --- 1. CONFIGURACIÓN Y LOGGING INICIAL ---
 # Lee la configuración desde un archivo externo
 config = configparser.ConfigParser()
 config.read('config.ini')
@@ -23,8 +22,8 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - [%(threadName)s] - %(message)s',
     handlers=[
-        logging.FileHandler("server.log"),  # Guarda logs en un archivo
-        logging.StreamHandler()  # Muestra logs en la consola
+        logging.FileHandler("server.log"),
+        logging.StreamHandler()
     ]
 )
 
@@ -66,25 +65,22 @@ class CustomHTTP(BaseHTTPRequestHandler):
             return False
 
     def do_GET(self):
-        """Sirve archivos de forma segura desde el DocumentRoot."""
 
-        # Si la ruta comienza con /private/, requiere autenticación
+        # Rutas /private/* -> Auth
         if self.path.startswith('/private/'):
             if not self._autenticar():
-                return  # La autenticación falló, no continuar.
+                return
 
-        # Traduce la ruta web a una ruta de archivo local
         if self.path == '/':
             filepath = os.path.join(DOCUMENT_ROOT, 'index.html')
         else:
             # Elimina el '/' inicial para que os.path.join funcione correctamente
             filepath = os.path.join(DOCUMENT_ROOT, self.path.lstrip('/'))
 
-        # --- 3. MEDIDA DE SEGURIDAD (ANTI-DIRECTORY TRAVERSAL) ---
-        # Normaliza las rutas y verifica que el archivo solicitado siga dentro del DocumentRoot
         safe_document_root = os.path.abspath(DOCUMENT_ROOT)
         safe_filepath = os.path.abspath(filepath)
 
+        # Anti-Path traversal
         if not safe_filepath.startswith(safe_document_root):
             logging.warning(f"Intento de acceso fuera del DocumentRoot bloqueado: {self.path}")
             self.send_error(403, "Acceso Prohibido")
@@ -109,7 +105,6 @@ class CustomHTTP(BaseHTTPRequestHandler):
             self.send_error(404, "Archivo No Encontrado")
 
 
-# --- BLOQUE PRINCIPAL PARA INICIAR EL SERVIDOR ---
 if __name__ == "__main__":
     # Crea el directorio webroot si no existe
     if not os.path.exists(DOCUMENT_ROOT):

@@ -34,3 +34,15 @@
 2025-10-14 22:03:35,960 - INFO - [MainThread] - Archivo no encontrado: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\webroot\config.ini
 2025-10-14 22:05:14,689 - INFO - [MainThread] - Sirviendo archivo: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\config.ini
 2025-10-14 22:07:05,637 - INFO - [MainThread] - Servidor detenido.
+2025-10-17 10:05:50,412 - INFO - [MainThread] - Servidor iniciado en http://localhost:8080
+2025-10-17 10:05:50,413 - INFO - [MainThread] - DocumentRoot configurado en: 'webroot'
+2025-10-17 10:05:53,967 - INFO - [MainThread] - Servidor detenido.
+2025-10-17 10:18:35,832 - INFO - [MainThread] - Servidor iniciado en http://localhost:8080
+2025-10-17 10:18:35,832 - INFO - [MainThread] - DocumentRoot configurado en: 'webroot'
+2025-10-17 10:18:38,382 - INFO - [MainThread] - Servidor detenido.
+2025-10-17 10:28:11,872 - INFO - [MainThread] - Servidor iniciado en http://localhost:8080
+2025-10-17 10:28:11,872 - INFO - [MainThread] - DocumentRoot configurado en: 'webroot'
+2025-10-17 10:28:16,654 - INFO - [MainThread] - Sirviendo archivo: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\config.ini
+2025-10-17 10:29:06,255 - INFO - [MainThread] - Usuario 'admin' autenticado correctamente para acceder a /private/secret.html
+2025-10-17 10:29:06,271 - INFO - [MainThread] - Sirviendo archivo: C:\Users\jupbi\PycharmProjects\tp_aplicaciones\http_server\webroot\private\secret.html
+2025-10-17 10:55:45,745 - INFO - [MainThread] - Servidor detenido.
