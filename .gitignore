@@ -1,0 +1,18 @@
+#General
+.*
+!/.gitignore
+*.log
+
+# http_server
+http_server/webroot/
+
+# ftp_server
+ftp_server/ftp_server_files/
+
+# chat
+chat/client_conversations/*
+chat/conversations/*
+chat/client_filed/*
+chat/server_files/*
+chat/server_profiles/*
+
