@@ -16,3 +16,5 @@ chat/client_filed/*
 chat/server_files/*
 chat/server_profiles/*
 
+# misc
+pancito/*
