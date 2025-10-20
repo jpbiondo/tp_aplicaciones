@@ -40,7 +40,15 @@ realizados. El servidor responder con un mensaje de éxito o error.
 ![img_1.png](img_1.png)
 ### IMAP
 Es un protocolo parecido a POP3, se diferencia en que permite clasificar los correos
-en carpetas, permite búsquedas más avanzadas. 
+en carpetas, permite búsquedas más avanzadas. Con `SELECT` seleccionas la carpeta con la que vas
+a trabajar, como `inbox`, `spam`, etc. `SELECT` te va a devolver cierta información, pero para buscar dentro
+del directorio tenés que hacer `SEARCH`, que te devuelve una lista de los correos electrónicos y sus UIDs.
+
+Los correos electrónicos se identifican por su UID y tienen banderas como `deleted`, `seen`, etc. Para eliminar
+un correo, colocás la bandera `deleted` con el comando `STORE` para el correo de un UID, luego hacés `EXPUNGE`.
+`EXPUNGE` es como un commit, si hacés varios deletes seguidos, lo tenés que ejecutar a la final para commitear todos
+los deletes.
+
 ![img_2.png](img_2.png)
 ## TODO
 - [ ] Probar si anda todo
