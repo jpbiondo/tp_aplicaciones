@@ -1,4 +1,4 @@
-## Email Client
+# Email Client
 
 Cliente de correo que implementa las siguientes funcionalidades:
 - Reenviar correos
@@ -6,7 +6,7 @@ Cliente de correo que implementa las siguientes funcionalidades:
 - Eliminar correos
 - Búsqueda de correos por distintos criterios (cuerpo del mail, destinatario, etc).
 
-### Configuración
+## Configuración
 Para utilizar el este cliente necesitás tu _dirección de correo_ (por ej. la de gmail) y una _contraseña de aplicación_.
 Para conseguir tu _contraseña de aplicación_ en gmail tenés que:
 1. Activar la [verificación en dos pasos](https://support.google.com/accounts/answer/185839?sjid=8773938299224853416-SA).
@@ -17,22 +17,31 @@ Cambiá el nombre del archivo `.env.example` a `.env`.
 
 Con esto ya podés correr el cliente, probarlo y ver desastre.
 
-### Protocolos utilizados
+## Protocolos utilizados
 Las funcionalidades se deben lograr con los protocolos STMP, IMAP y POP3. Python provee librerías estándar para
 comunicarse utilizando cualquiera de los protocolos.
-#### SMTP
-Es un protocolo para enviar los mensajes entre distintos clientes.
-![img](https://acf.geeknetic.es/imgri/imagenes/auto/21/09/22/i6w-que-es-smtp-y-para-que-sirve.png?f=webp)
-#### POP 3
-Protocolo creado con el propósito principal de la lectura de mensajes desde el servidor del correo. Es maleta
-para operaciones como eliminar y modificar.
-![img](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6m4R_1Iz8QZMFquFmlQZNGVj9Oy7aoJrrZw&s)
-#### IMAP
-Protocolo para la lectura de mensajes desde el servidor de correos. Ofrece una estructura
-de carpetas como `INBOX`, `SPAM` y qsy, por este motivo es ideal para realizar búsquedas avanzadas.
-Además admite operaciones eliminar y modificar, cada correo tiene su UID.
-![img](https://ghost-images.chamaileon.io/2023/02/3.webp)
+### SMTP
+Es un _protocolo de transporte de correo electrónico_ que permite **enviar, reenviar y responder correos electrónicos**. Cuando se establece
+la conexión TCP entre el cliente (_Mail User Agent_ o _MUA_) y servidor (_Mail Transport Agent_ o _MTA_), el flujo de mensajes para enviar un correo es el siguiente.
+![img.png](img.png)
 
-### TODO
+### POP 3
+Este protocolo permite consultar la mailbox de un servidor de correo electrónico. Admite operaciones
+para cosultar y eliminar. El protocolo consta de 3 estados importantes: autenticación, transacción y actualización.
+
+En el estado de autenticación, el cliente debe autenticarse con su correo electrónico y contraseña. Lo realiza mediante los comandos `USER <email_addr>` y `PASS <email_app_pass`.
+
+Una vez autenticado, pasa al estado de transacción. En el estado de transacción el cliente puede realizar operaciones de consulta o marcar mensajes para eliminar. Los mensajes
+son identificados con un ID incremental de la sesión, donde 1 es el ID del mensaje más reciente. El ID del mensaje se utiliza
+para las operaciones `RETR` para consultarlo y `DELE` para marcarlo para eliminar.
+
+Del estado de autenticación se pasa al estado de actualización con el comando `QUIT`. En este estado, se commitean los cambios
+realizados. El servidor responder con un mensaje de éxito o error.
+![img_1.png](img_1.png)
+### IMAP
+Es un protocolo parecido a POP3, se diferencia en que permite clasificar los correos
+en carpetas, permite búsquedas más avanzadas. 
+![img_2.png](img_2.png)
+## TODO
 - [ ] Probar si anda todo
 - [ ] Cómo integrar POP3?

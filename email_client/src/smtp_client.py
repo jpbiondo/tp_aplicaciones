@@ -59,7 +59,6 @@ def reenviar_correo_smtp(smtp_server, email_addr, email_pass, destinatario, uid_
         print("No se encontró un cuerpo de texto plano en el correo original.")
         return
 
-    # 3. Llamar a TU función de envío
     print(f"Reenviando a: {destinatario}...")
     enviar_correo_smtp(
         smtp_server=smtp_server,
@@ -67,7 +66,8 @@ def reenviar_correo_smtp(smtp_server, email_addr, email_pass, destinatario, uid_
         email_pass=email_pass,
         destinatario=destinatario,
         asunto=nuevo_asunto,
-        cuerpo=cuerpo_original
+        cuerpo=cuerpo_original,
+        smtp_port=smtp_port
     )
 
 
@@ -110,7 +110,6 @@ def responder_correo(smtp_server, email_addr, email_pass, uid_a_responder, respu
 
     cuerpo_final_respuesta = respuesta + cuerpo_citado
 
-    # 3. Llamar a TU función de envío con los datos preparados
     print(f"Preparando para enviar respuesta a {destinatario_respuesta}...")
     enviar_correo_smtp(
         smtp_server=smtp_server,
