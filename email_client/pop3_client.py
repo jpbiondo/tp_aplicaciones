@@ -31,8 +31,8 @@ def obtener_correo_por_id(pop3_session, id):
     msg = parser.parsebytes(msg_content)
 
     asunto = msg['Subject']
+    remitente = msg['From']
     cuerpo = ""
-
     for part in msg.walk():
         content_type = part.get_content_type()
 
@@ -40,6 +40,15 @@ def obtener_correo_por_id(pop3_session, id):
             cuerpo = part.get_content()
             break
 
-    return asunto, cuerpo
+    return asunto, remitente, cuerpo
+
+def eliminar_correo_pop3(pop_session, id):
+    try:
+        pop_session.dele(id)
+        print(f"Correo con UID {id.decode()} borrado.")
+        return True
+    except Exception as e:
+        print(f"Error al tratar de eliminar con IMAP: {e}")
+        return False
 
 

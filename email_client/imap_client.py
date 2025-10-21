@@ -53,13 +53,11 @@ def obtener_mensaje_por_uid(imap_session, uid_buscar):
             return asunto, remitente, fecha, cuerpo
 
 
-def eliminar_correo_imap_ssl(imap_server_addr, email_addr, email_pass, uid_correo_eliminar):
+def eliminar_correo_imap_ssl(imap_session, uid_correo_eliminar):
     try:
-        mail = imaplib.IMAP4_SSL(imap_server_addr)
-        mail.login(email_addr, email_pass)
-        mail.uid('store', uid_correo_eliminar, '+FLAGS', '\\DELETED')
-        mail.expunge()
-        mail.logout()
+        imap_session.uid('store', uid_correo_eliminar, '+FLAGS', '\\DELETED')
+        imap_session.expunge()
+        imap_session.logout()
         print(f"Correo con UID {uid_correo_eliminar.decode()} borrado.")
         return True
     except Exception as e:
